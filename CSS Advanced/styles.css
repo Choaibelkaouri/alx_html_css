@@ -1,0 +1,455 @@
+/* =========================
+   RESET & GLOBAL
+   ========================= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #071629;
+    background-color: #ffffff;
+}
+
+/* Remove default link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Reusable container */
+.container,
+.hero-container,
+.quote-container,
+.video-grid,
+.membership-grid,
+.faq-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Buttons */
+button,
+.btn {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Section titles */
+section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+header {
+    background-color: #071629;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    height: 30px;
+}
+
+/* Navigation */
+header nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+header nav a:hover {
+    color: #c271ff;
+}
+
+/* =========================
+   HERO / BANNER
+   ========================= */
+.hero {
+    background-color: #071629;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 0 60px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero .subtitle {
+    display: block;
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+/* Main CTA button */
+.hero .btn {
+    background-color: #c271ff;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 12px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.hero .btn:hover {
+    opacity: 0.9;
+}
+
+/* Pros (4 people under the banner) */
+.hero .pros {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero .pro {
+    text-align: center;
+    max-width: 150px;
+}
+
+.hero .pro img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px;
+}
+
+.hero .pro h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.hero .pro p {
+    font-size: 12px;
+    color: #c4c4c4;
+}
+
+/* =========================
+   QUOTE SECTION
+   ========================= */
+.quote {
+    background-color: #c271ff;
+    color: #ffffff;
+    padding: 60px 0;
+}
+
+.quote-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.quote-container img {
+    width: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.quote .text blockquote {
+    font-size: 22px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.quote .text p {
+    font-weight: 700;
+}
+
+/* =========================
+   VIDEOS LIST
+   ========================= */
+.videos {
+    background-color: #ffffff;
+    color: #071629;
+    padding: 80px 0;
+}
+
+.videos h2 {
+    margin-bottom: 50px;
+}
+
+/* Grid of cards */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* Each video card */
+.video-card {
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(7, 22, 41, 0.1);
+    padding-bottom: 15px;
+}
+
+.video-card > img:first-child {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* Title + description */
+.video-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 15px 15px 5px;
+}
+
+.video-card > p {
+    font-size: 14px;
+    color: #7a7a7a;
+    margin: 0 15px 10px;
+}
+
+/* Rating stars */
+.video-card img[src*="rating"] {
+    width: 80px;
+    margin: 0 15px 10px;
+}
+
+/* Author line */
+.video-card .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 15px;
+}
+
+.video-card .author img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.video-card .author span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================
+   MEMBERSHIP
+   ========================= */
+.membership {
+    background-color: #071629;
+    color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.membership h2 {
+    margin-bottom: 50px;
+}
+
+/* Membership cards layout */
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* Each membership card */
+.membership .card {
+    text-align: center;
+}
+
+.membership .card img {
+    width: 60px;
+    margin: 0 auto 15px;
+}
+
+.membership .card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.membership .card p {
+    font-size: 14px;
+    color: #c4c4c4;
+    margin-bottom: 15px;
+}
+
+/* Membership button */
+.membership .card button {
+    background-color: #c271ff;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.membership .card button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   FAQ
+   ========================= */
+.faq {
+    background-color: #ffffff;
+    color: #071629;
+    padding: 80px 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 60px;
+}
+
+.faq-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 14px;
+    color: #7a7a7a;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+    background-color: #071629;
+    color: #ffffff;
+    padding: 25px 0;
+}
+
+footer .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer img {
+    height: 30px;
+}
+
+footer p {
+    font-size: 12px;
+    color: #c4c4c4;
+}
+
+
+
+
+@media (max-width: 992px) {
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .membership-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 60px 0 40px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero .subtitle {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .quote-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer .footer-inner {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    footer {
+        margin-left: ;
+    }
+}
