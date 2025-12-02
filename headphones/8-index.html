@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Headphones — Responsive hamburger menu</title>
+
+  <link rel="stylesheet" href="8-styles.css" />
+  <link rel="icon" href="images/favicon.png" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="Homepage">
+        <img src="images/logo_headphones.png" alt="Headphones logo">
+      </a>
+
+      <!-- Hamburger button (visible on small screens) -->
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">
+        <span class="hamburger-box">
+          <span class="hamburger-inner" aria-hidden="true"></span>
+        </span>
+      </button>
+
+      <!-- Main nav -->
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#what">What we do</a></li>
+          <li><a href="#results">Our results</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Keep page content compact for demo -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="overlay" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Lorem ipsum dolor sit amet</h1>
+          <p class="hero-lead">Sample hero text for the responsive menu demo.</p>
+          <a class="btn primary" href="#contact">CALL TO ACTION</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we do (short) -->
+    <section id="what" class="what-we-do" aria-labelledby="what-title">
+      <div class="container">
+        <h2 id="what-title" class="section-title">What we do</h2>
+        <p class="section-sub">Short section text — mobile menu demo.</p>
+      </div>
+    </section>
+
+    <section id="results" class="our-results" aria-labelledby="results-title">
+      <div class="container">
+        <h2 id="results-title" class="section-title white-title">Our results</h2>
+        <p class="section-sub white-sub">Demo content.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Contact us</h2>
+        <p class="section-sub">Demo contact area.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo_headphones.png" alt="Headphones logo" class="footer-logo">
+        <p class="footer-tag">Design by Nicolas Philippot</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="#what">What we do</a></li>
+          <li><a href="#results">Our results</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <p>hello@headphones.example</p>
+      </div>
+      <div class="footer-legal">
+        <p>© 2025 Headphones</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="8-script.js"></script>
+</body>
+</html>

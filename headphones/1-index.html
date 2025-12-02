@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Headphones — What we do</title>
+  <link rel="stylesheet" href="0-styles.css" />
+  <link rel="icon" href="images/favicon.png" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER (copied from task 0) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="Homepage">
+        <img src="images/logo_headphones.png" alt="Headphones logo">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#what">What we do</a></li>
+          <li><a href="#results">Our results</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO (copied & slightly adjusted) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="overlay" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Lorem ipsum dolor set amet lorem ipsum</h1>
+          <p class="hero-lead">Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+          <p class="hero-ctas">
+            <a class="btn primary" href="#contact">CALL TO ACTION</a>
+          </p>
+          <p class="hero-desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section id="what" class="what-we-do" aria-labelledby="what-title">
+      <div class="container">
+        <h2 id="what-title" class="section-title">What we do</h2>
+        <p class="section-sub">We design and build audio-first experiences that delight listeners.</p>
+
+        <ul class="features" role="list">
+          <li class="feature">
+            <!-- Icon: uses font if installed, otherwise uses fallback image via CSS -->
+            <span class="hs-icon" aria-hidden="true"></span>
+            <h3 class="feature-title">Design</h3>
+            <p class="feature-desc">Beautiful product and interface design focused on audio experiences.</p>
+          </li>
+
+          <li class="feature">
+            <span class="hs-icon" aria-hidden="true"></span>
+            <h3 class="feature-title">Development</h3>
+            <p class="feature-desc">Frontend and backend engineering for reliable streaming and low-latency audio.</p>
+          </li>
+
+          <li class="feature">
+            <span class="hs-icon" aria-hidden="true"></span>
+            <h3 class="feature-title">Research</h3>
+            <p class="feature-desc">User research and listening tests to tune experience and accessibility.</p>
+          </li>
+
+          <li class="feature">
+            <span class="hs-icon" aria-hidden="true"></span>
+            <h3 class="feature-title">Optimization</h3>
+            <p class="feature-desc">Audio performance, compression, and intelligent caching for smooth playback.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- (Next sections like Our results / Contact will follow in other tasks) -->
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Headphones — design by Nicolas Philippot</p>
+    </div>
+  </footer>
+</body>
+</html>

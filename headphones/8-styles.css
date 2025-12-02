@@ -1,0 +1,153 @@
+/* 8-styles.css
+   Responsive header + hamburger menu styles
+   Keep consistent with earlier pages (max-width: 1000px)
+*/
+
+/* RESET & VARIABLES */
+:root{
+  --accent: #FF6565;
+  --white: #ffffff;
+  --muted: #bfc9d1;
+  --max-width: 1000px;
+  --font-main: "Source Sans Pro", Arial, sans-serif;
+  --nav-bg: rgba(2,10,18,0.96);
+  --ease: cubic-bezier(.2,.9,.2,1);
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+html,body { height:100%; }
+body{
+  font-family:var(--font-main);
+  color:#222;
+  background: url("images/headphones_hero_1.jpg") center/cover no-repeat;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Container */
+.container{ max-width:var(--max-width); margin:0 auto; padding: 0 20px; }
+
+/* Skip link */
+.skip-link{ position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus{ left:12px; top:12px; width:auto; height:auto; padding:8px 12px; background:#000; color:#fff; border-radius:4px; z-index:9999; }
+
+/* HEADER */
+.site-header{ position:relative; z-index:40; padding:18px 0; }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+
+/* Logo */
+.logo img{ height:40px; display:block; }
+
+/* Main nav (desktop) */
+.main-nav { display:block; }
+.main-nav .nav-list { display:flex; gap:24px; list-style:none; align-items:center; }
+.main-nav a { color:#fff; text-decoration:none; font-weight:600; padding:8px 6px; border-radius:6px; }
+.main-nav a:hover { color: var(--accent); }
+
+/* HAMBURGER BUTTON (hidden on desktop) */
+.hamburger{
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  width:44px;
+  height:44px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Hamburger visual */
+.hamburger-box{ display:inline-block; position:relative; width:26px; height:18px; }
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  display:block;
+  background: #fff;
+  height: 2px;
+  border-radius: 2px;
+  position:absolute;
+  left:0;
+  right:0;
+  transition: transform .35s var(--ease), opacity .2s var(--ease);
+}
+.hamburger-inner{ top:50%; transform: translateY(-50%); }
+.hamburger-inner::before{ content:""; top:-8px; }
+.hamburger-inner::after{ content:""; top:8px; }
+
+/* state when open: animate to X */
+.hamburger[aria-expanded="true"] .hamburger-inner {
+  background: transparent;
+}
+.hamburger[aria-expanded="true"] .hamburger-inner::before {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger[aria-expanded="true"] .hamburger-inner::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* MOBILE NAV (overlay) */
+.mobile-nav {
+  display: none; /* hidden by default */
+}
+
+/* When open, show overlay full-screen nav */
+.mobile-nav.open {
+  display:block;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(1,6,10,0.92), rgba(1,6,10,0.96));
+  z-index: 35;
+  padding-top: 84px; /* keep space for header / hamburger */
+  overflow-y: auto;
+  transition: opacity .28s var(--ease), transform .28s var(--ease);
+  transform-origin: top center;
+}
+
+/* mobile nav inner container */
+.mobile-nav .container {
+  max-width: 1000px;
+  padding: 20px;
+}
+
+/* mobile nav list */
+.mobile-nav .nav-list { display:flex; flex-direction:column; gap:18px; align-items:flex-start; padding-left:0; margin-top:12px; }
+.mobile-nav a { color: var(--white); font-size:20px; text-decoration:none; font-weight:700; }
+
+/* subtle entry animation */
+.mobile-nav.open { opacity: 1; transform: translateY(0); }
+.mobile-nav { opacity: 0; transform: translateY(-6%); }
+
+/* focus outline for a11y */
+.main-nav a:focus, .mobile-nav a:focus, .hamburger:focus { outline: 3px solid rgba(255,101,101,0.12); outline-offset: 4px; }
+
+/* HERO styles quick */
+.hero{ padding:120px 0 60px; text-align:center; position:relative; }
+.hero-copy h1{ font-size:30px; color:#fff; margin-bottom:8px; }
+.btn.primary{ background: var(--accent); color: white; padding:12px 28px; border-radius:30px; text-decoration:none; }
+
+/* Footer quick */
+.site-footer{ padding:40px 0; color: rgba(255,255,255,0.9); background: linear-gradient(180deg, #02101a, #050710); }
+
+/* ======================
+   RESPONSIVE: <=480px
+   ====================== */
+@media (max-width:480px){
+  /* show hamburger & hide desktop nav */
+  .hamburger { display:flex; }
+  .main-nav { display:none; }
+
+  /* ensure header container spacing keeps everything aligned */
+  .header-inner { align-items:center; }
+
+  /* show mobile-nav (hidden until open) */
+  .mobile-nav .nav-list a { padding: 12px 6px; display:block; width:100%; border-radius:8px; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after,
+  .mobile-nav, .mobile-nav.open {
+    transition: none !important;
+    animation: none !important;
+  }
+}
